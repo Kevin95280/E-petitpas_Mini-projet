@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { PrismaClient } from '@prisma/client';
+import validator from 'validator';
 
 // Initialisation des instances
 const app = express();
@@ -15,6 +16,11 @@ app.use(bodyParser.json());
 // Route POST /register : création d'un utilisateur
 app.post('/api/register', async (req, res) => {
   const { name, email } = req.body;
+
+    // Vérifie que l'email est bien au bon format
+  if (!validator.isEmail(email)) {
+    return res.status(400).json({ error: 'Format d’email invalide.' });
+  }
 
   try {
     const user = await prisma.user.create({
