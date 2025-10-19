@@ -10,7 +10,11 @@ const app = express();
 const prisma = new PrismaClient();
 
 // Middleware pour gérer CORS et JSON
-app.use(cors());
+app.use(cors({
+  origin: "https://e-petitpas-mini-projet-frontend.onrender.com",
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // Route POST /register : création d'un utilisateur
