@@ -22,7 +22,7 @@ export default function Login() {
     // Fonction appelée quand on clique sur "Inscription"
     const handleRegister = async () => {
         try {
-            const response = await fetch('${API_URL}/api/register', {
+            const response = await fetch(`${API_URL}/api/register`, {
                 method: 'POST',
                 // On spécifie le type de données envoyées
                 headers: {'Content-Type': 'application/json'},
@@ -46,7 +46,7 @@ export default function Login() {
     // Fonction appelée quand on clique sur "Connexion"
     const handleLogin = async () => {
         try {
-            const response = await fetch('${API_URL}/api/login', {
+            const response = await fetch(`${API_URL}/api/login`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ name, email})

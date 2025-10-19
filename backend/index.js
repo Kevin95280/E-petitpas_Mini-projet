@@ -13,11 +13,6 @@ const prisma = new PrismaClient();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.json({ message: "Backend opérationnel" });
-});
-
-
 // Route POST /register : création d'un utilisateur
 app.post('/api/register', async (req, res) => {
   const { name, email } = req.body;
@@ -55,5 +50,5 @@ app.post('/api/login', async (req, res) => {
 // Démarrage du serveur
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log('Backend API démarrée sur le port ${PORT}');
+  console.log(`Backend API démarrée sur le port ${PORT}`);
 });
