@@ -18,6 +18,7 @@ export default function Login() {
 
     // Récupération de l'URL de l'API depuis les variables d'environnement
     const API_URL = process.env.REACT_APP_API_URL;
+    console.log("API_URL =", process.env.REACT_APP_API_URL);
 
     // Fonction appelée quand on clique sur "Inscription"
     const handleRegister = async () => {
