@@ -16,10 +16,13 @@ export default function Login() {
 
     const navigate = useNavigate();
 
+    // Récupération de l'URL de l'API depuis les variables d'environnement
+    const API_URL = process.env.REACT_APP_API_URL;
+
     // Fonction appelée quand on clique sur "Inscription"
     const handleRegister = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/register', {
+            const response = await fetch('${API_URL}/api/register', {
                 method: 'POST',
                 // On spécifie le type de données envoyées
                 headers: {'Content-Type': 'application/json'},
@@ -43,7 +46,7 @@ export default function Login() {
     // Fonction appelée quand on clique sur "Connexion"
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/login', {
+            const response = await fetch('${API_URL}/api/login', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ name, email})
