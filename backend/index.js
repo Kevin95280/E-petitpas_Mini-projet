@@ -53,6 +53,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 // Démarrage du serveur
-app.listen(3001, () => {
-  console.log('Backend API démarrée sur http://localhost:3001');
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log('Backend API démarrée sur le port ${PORT}');
 });
