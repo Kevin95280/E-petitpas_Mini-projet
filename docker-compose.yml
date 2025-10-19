@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: "postgresql://postgres.caebicogsquzsyknjals:E-petitpas_mini-projet@aws-0-eu-west-3.pooler.supabase.com:5432/postgres"
