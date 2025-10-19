@@ -13,6 +13,11 @@ const prisma = new PrismaClient();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.json({ message: "Backend opérationnel" });
+});
+
+
 // Route POST /register : création d'un utilisateur
 app.post('/api/register', async (req, res) => {
   const { name, email } = req.body;
