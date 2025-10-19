@@ -17,7 +17,7 @@ export default function Login() {
     const navigate = useNavigate();
 
     // Récupération de l'URL de l'API depuis les variables d'environnement
-    const API_URL = "https://e-petitpas-mini-projet-backend.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
 
     // Fonction appelée quand on clique sur "Inscription"
     const handleRegister = async () => {
