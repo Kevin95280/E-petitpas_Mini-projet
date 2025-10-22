@@ -50,6 +50,11 @@
 
 &nbsp;
 
+🔗 Démo en ligne
+👉 [Voir le site en ligne](https://e-petitpas-mini-projet-frontend.onrender.com)
+
+&nbsp;
+
 **A noter:**   
 Dans le cadre d'un projet plus abouti, le style de l'application serait entierement géré dans un dossier CSS/SCSS.  
 Les variables d'environnement seraient également stockés dans un fichier .env qui ne serait pas rendu public, par mesure de sécurité.
